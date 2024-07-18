@@ -41,6 +41,8 @@ async def main():
 
     except Exception as ex:
         print(ex)
+    finally:
+        await client.close()
 
 async def call_openai_model(system_message, user_message, model, client):
     # Format and send the request to the model
